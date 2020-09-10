@@ -1,0 +1,22 @@
+{   
+    "server": {
+        "port":9090,
+        "debugPort":9099,
+        "apiPath": "/api/v1",
+        "apiContextPath": "/myapp"
+    },
+    "jobs" : {
+        "dbConfig": {
+            "host": "127.0.0.1",
+            "port": 27017,
+            "dbName": "jobs"
+        }
+    },
+    "employees" : {
+        "dbConfig": {
+            "host": "127.0.0.1",
+            "port": 27017,
+            "dbName": "employees"
+        }
+    }
+}

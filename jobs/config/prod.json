@@ -1,0 +1,16 @@
+{
+    "jobs" : {
+        "dbConfig": {
+            "host": "127.0.0.1",
+            "port": 27017,
+            "dbName": "jobs"
+        }
+    },
+    "employees" : {
+        "dbConfig": {
+            "host": "127.0.0.1",
+            "port": 27017,
+            "dbName": "employees"
+        }
+    }
+}
