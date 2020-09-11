@@ -1,18 +1,21 @@
-{   
+{
     "server": {
-        "port":9090,
-        "debugPort":9099,
+        "port": 9090,
+        "debugPort": 9099,
         "apiPath": "/api/v1",
         "apiContextPath": "/myapp"
     },
-    "jobs" : {
+    "jobs": {
         "dbConfig": {
             "host": "127.0.0.1",
             "port": 27017,
             "dbName": "jobs"
+        },
+        "errorMessages": {
+            "invalidObjectId": "Invalid object id. The resource you are looking for is either deleted or moved. The access to this resource is not allowed. Please contact Administrator."
         }
     },
-    "employees" : {
+    "employees": {
         "dbConfig": {
             "host": "127.0.0.1",
             "port": 27017,

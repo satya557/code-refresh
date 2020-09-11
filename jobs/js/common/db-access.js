@@ -1,13 +1,21 @@
 'use strict';
 
-exports.getModelByName = function(dbName) {
-    if(!dbName) {
+/** TODO: Get or load the definition from the configuration */
+var job_schema_definition = {
+    jobCode: { type: Number, required: true, unique: true },
+    jobTitle: { type: String, required: true, trim: true },
+    jobStatus: { type: String, required: true, trim: true},
+    jobLocation: { type: String, required: true, trim: true },
+}
+
+exports.getModelByName = function (dbName) {
+    if (!dbName) {
         console.log("getModelByName - dbName is", dbName);
         return;
     }
     const mongoose = require('mongoose');
-    const schema = new mongoose.Schema({}, { collection: dbName });
-    const model = mongoose.model('Model', schema);
+    const schema = new mongoose.Schema(job_schema_definition, { collection: dbName });
+    const model = mongoose.model('Jobs', schema);
     const config = require("config");
     const url = getUrl(config, dbName);
     console.log("getModelByName - url is", url);
