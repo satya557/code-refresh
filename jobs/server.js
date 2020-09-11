@@ -15,6 +15,7 @@ console.log("server port", port);
 // get the jobs router
 const jobsRouter = require("./js/routes/route-jobs");
 
+app.use(express.json());
 app.use('/api/v1/jobs', jobsRouter);
 
 app.listen(port, () => {
