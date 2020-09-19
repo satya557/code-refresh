@@ -1,10 +1,9 @@
 'use strict';
 
 const config = require("config");
-const dbName = config.get("jobs.dbConfig.dbName");
-const model = require("../common/db-access").getModelByName(dbName);
+const conn = require("../db/db-connection");
 const mongoose = require('mongoose');
-const { jobs_create } = require("../controllers/jobs-controller");
+const model = conn.model('jobs');
 
 // get all the jobs
 exports.getJobs = function () {

@@ -15,11 +15,12 @@
             "invalidObjectId": "Invalid object id. The resource you are looking for is either deleted or moved. The access to this resource is not allowed. Please contact Administrator."
         }
     },
-    "employees": {
+    "users": {
         "dbConfig": {
             "host": "127.0.0.1",
             "port": 27017,
-            "dbName": "employees"
+            "dbName": "users",
+            "JWT_SECRET": "e177920e88165bd0090b1c6b544cf7"
         }
     }
 }

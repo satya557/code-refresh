@@ -34,7 +34,8 @@ exports.job_get = function (req, res) {
             res.json(data);
         })
         .catch(function (err) {
-            res.status(500).send(err);
+            console.log(err);
+            res.status(500).send(_buildError(err));
         });
 }
 
@@ -45,7 +46,8 @@ exports.jobs_create = function (req, res) {
             res.json(data);
         })
         .catch(function (err) {
-            res.status(500).send(err);
+            console.log(err);
+            res.status(500).send(_buildError(err));
         });
 }
 
@@ -63,7 +65,8 @@ exports.jobs_delete = function (req, res) {
             res.json(data);
         })
         .catch(function (err) {
-            res.status(500).send(err);
+            console.log(err);
+            res.status(500).send(_buildError(err));
         })
 }
 
@@ -75,6 +78,14 @@ exports.job_update = function (req, res) {
             res.json(data);
         })
         .catch(function (err) {
-            res.status(500).send(err);
+            console.log(err);
+            res.status(500).send(_buildError(err));
         });
+}
+
+function _buildError(err) {
+    return {
+        errorCode: err.code,
+        errorMessage: err.message
+    }
 }
