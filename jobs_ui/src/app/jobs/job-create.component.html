@@ -1,0 +1,47 @@
+<div class="container">
+    <header style="margin-top: 1em">
+        <div class="navbar navbar-light bg-light box-shadow">
+            <strong>{{pageTitle}}</strong>
+        </div>
+    </header>
+
+    <main role="main">
+        <div class="container jobs-table-container">
+            <form [formGroup]="jobCreateForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="jobCode">Code:</label>
+                    <input type="number" class="form-control" id="jobCode" name="jobCode" aria-describedby="jobCode"
+                        placeholder="Enter Job Code" formControlName="jobCode" required>
+                </div>
+                <div class="form-group">
+                    <label for="jobTitle">Title</label>
+                    <input type="text" class="form-control" id="jobTitle" name="jobTitle" placeholder="Enter Job Title"
+                        formControlName="jobTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="jobStatus">Status</label>
+                    <input type="text" class="form-control" id="jobStatus" name="jobStatus"
+                        placeholder="Enter Job Status" formControlName="jobStatus">
+                </div>
+                <div class="form-group">
+                    <label for="jobLocation">Location</label>
+                    <input type="text" class="form-control" id="jobLocation" name="jobLocation"
+                        placeholder="Enter Job Location" formControlName="jobLocation">
+                </div>
+                <div class="form-group">
+                    <label for="jobDescription">Description</label>
+                    <textarea class="form-control" id="jobDescription" name="jobDescription"
+                        placeholder="Enter Job Description" formControlName="jobDescription"></textarea>
+                </div>
+                <div>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="submit" class="btn btn-primary" style="margin-left: 1em;"
+                        [disabled]="!jobCreateForm.valid">Create</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+    </footer>
+
+</div>
