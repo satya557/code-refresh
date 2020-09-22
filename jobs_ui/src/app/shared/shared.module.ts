@@ -7,7 +7,7 @@ import { CoreModule } from '../core/core.module';
     providers: [
     ],
     exports: [
-        CoreModule 
+        CoreModule
     ]
 })
 

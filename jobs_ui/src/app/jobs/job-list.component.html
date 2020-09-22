@@ -1,0 +1,46 @@
+<div class="container">
+    <header style="margin-top: 1em">
+        <div class="navbar navbar-light bg-light box-shadow">
+            <strong>{{pageTitle}}</strong>
+        </div>
+    </header>
+
+   <div class="actions-menu" style="margin-top: 1em; margin-bottom: 1em;">
+       <button class="btn btn-primary" (click) = "createJob()">+Add New</button>
+   </div>
+
+    <main role="main">
+        <div class="jobs-table-container">
+            <table class="table" *ngIf='jobs && jobs.length'>
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let job of jobs; let i = index'>
+                        <th scope="row">{{i+1}}</th>
+                        <td>
+                            <a [routerLink]="['/jobs', job._id]">{{job.jobCode}}</a>
+                        </td>
+                        <td>{{job.jobTitle}}</td>
+                        <td>{{job.jobStatus}}</td>
+                        <td>{{job.jobLocation}}</td>
+                        <td style="align-items: center;">
+                            <button class="btn btn-primary" style="margin-right: 0.5em;" (click)="onEdit()">Edit</button>
+                            <button class="btn btn-danger" (click)="onDelete(job._id, job.jobCode)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer></footer>
+
+</div>

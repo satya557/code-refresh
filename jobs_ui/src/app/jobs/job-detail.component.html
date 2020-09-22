@@ -1,0 +1,59 @@
+<div class="container">
+    <header style="margin-top: 1em">
+        <div class="navbar navbar-light bg-light box-shadow">
+            <strong>{{pageTitle}}</strong>
+        </div>
+    </header>
+
+    <main role="main">
+        <div class="container jobs-table-container" *ngIf='job'>
+            <div class="row">
+                <div class="col">
+                    <strong>Code:</strong>
+                  </div>
+                  <div class="col">
+                    <h6>{{job.jobCode}}</h6>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <strong>Title:</strong>
+                  </div>
+                  <div class="col">
+                    <h6>{{job.jobTitle}}</h6>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <strong>Status</strong>
+                  </div>
+                  <div class="col">
+                    <h6>{{job.jobStatus}}</h6>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <strong>Location:</strong>
+                  </div>
+                  <div class="col">
+                    <h6>{{job.jobLocation}}</h6>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <strong>Description:</strong>
+                  </div>
+                  <div class="col">
+                    <h6>{{job.jobDescription}}</h6>
+                  </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="back-t-jobs">
+            <button class="btn btn-primary" (click)="onBack()">Back</button>
+        </div>
+    </footer>
+
+</div>
